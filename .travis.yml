@@ -14,11 +14,10 @@ after_success:
   - docker build -t rjpdeen/multi-server ./server
   - docker build -t rjpdeen/multi-worker ./worker
 
-#Log in to the docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-# take those images and push the to Docker Hub
-- docker push rjpdeen/multi-client
-- docker push rjpdeen/multi-nginx
-- docker push rjpdeen/multi-server
-- docker push rjpdeen/multi-worker
-
+  #Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # take those images and push the to Docker Hub
+  - docker push rjpdeen/multi-client
+  - docker push rjpdeen/multi-nginx
+  - docker push rjpdeen/multi-server
+  - docker push rjpdeen/multi-worker
